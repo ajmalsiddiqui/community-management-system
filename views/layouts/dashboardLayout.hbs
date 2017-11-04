@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <!-- href of static assets relative to path specified in express.static -->
+    <link rel='stylesheet' href='/styles/homeLayout.css' />
+    <!-- stylesheet for container -->
+    <link rel='stylesheet' href='/styles/container.css' />
+    <!-- stylesheet for homepage -->
+    <link rel='stylesheet' href='/styles/home.css' />
+    <!-- stylesheer for error -->
+    <link rel='stylesheet' href='/styles/error.css' />
+    <!-- stylesheet for members -->
+    <link rel='stylesheet' href='/styles/members.css' />
+    <!-- stylesheet for member-detailed -->
+    <link rel='stylesheet' href='/styles/member-detailed.css' />
+  </head>
+  <body>
+    
+    <div class="nav-top">
+      <ul class="nav-ul">
+        <li class="nav-li"><a href="#">Community</a></li>
+        <li class="nav-li"><a href="#">Members</a></li>
+        <li class="nav-li"><a href="#">Events</a></li>
+        <li class="nav-li"><a href="#">Activities</a></li>
+        <li class="nav-li"><a href="#">Sponsors</a></li>
+        <li class="nav-li" id="logout"><a href="#">{{loggedIn}}</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+        {{{body}}}
+    </div>
+    
+    <div class="footer">
+      <p id="footer-p">Online Community Management System</p>
+    </div>
+  </body>
+</html>

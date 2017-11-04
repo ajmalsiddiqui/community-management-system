@@ -1,0 +1,10 @@
+<div id="member-details">
+    <p class="member-detail" id="name">Say hello to {{name}}</p>
+    <p class="member-detail" id="position">{{position}}</p>
+    <p class="member-detail" id="description">{{description}}</p>
+    <ul id="skills">
+        {{#each skills}}
+            <li class="skill">{{this}}</li>
+        {{/each}}
+    </ul>
+</div>

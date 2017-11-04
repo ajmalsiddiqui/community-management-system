@@ -1,0 +1,54 @@
+<div class="main">
+
+    <form id="new-member" action="../member/create" method="POST">
+    <fieldset>
+    <legend id="new-member-title">Add Member</legend>
+    <div>
+        <label class="new-member-label" for="member-name">Name:</label>
+        <input type="text" class="member-input" id="member-name" size="25" placeholder="Member Name" name="name">
+    </div>
+    <div>
+        <label class="new-member-label" for="member-position">Position:</label>
+        <input type="text" class="member-input" id="member-position" size="25" placeholder="Position" name="position">
+    </div>
+    <div>
+        <label class="new-member-label" for="member-description">Description:</label>
+        <input type="text" class="member-input" id="member-description" size="25" placeholder="Description" name="description">
+    </div>
+    <div>
+        <label class="new-member-label" for="member-skills">Skills:</label>
+        <input type="text" class="member-input" id="member-skills" size="25" placeholder="Skills (e.g. Footlball, Coding)" name="skills"> 
+    </div>
+    <div style="display:none; width:0px; height: 0px;">
+        <input type="hidden" value="{{commId}}" name="community">
+    </div>
+        <div id="member-submit">
+            <button type="submit">Add Member</button>
+        </div>
+    </fieldset>
+    </form>
+
+          <div class="heading">
+            <span>
+                <p id="title">Meet the Team</p>
+            </span>
+          </div>
+          <!--div class="heading">
+            <p id="founder">Founded by {{founder}}</p>
+          </div-->
+          <div class="member-overview">
+              <table id="member-list">
+                <tr class="member-tr">
+                  <th class="member-th">Name</th>
+                  <th class="member-th">Skill</th>
+                </tr>
+                {{#each members}}
+                    <tr class="member-tr">
+                        <td class="member-name"><a href="{{this.url}}" class="member-link">{{this.name}}</a></td>
+                        <td class="member-position">{{this.position}}</td>
+                        <td class="url">{{this.url}}</td>
+                    </tr>
+                {{/each}}
+              </table>
+          </div>
+      </div>

@@ -1,0 +1,15 @@
+.error {
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px;
+}
+
+#status {
+    font-size: 72px;
+    color: #007769;
+}
+
+#message {
+    font-size: 32px;
+    color: #48a697;
+}

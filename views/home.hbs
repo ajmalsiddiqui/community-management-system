@@ -1,0 +1,65 @@
+<div id="signup" class="home-div">
+    <div id="intro">
+        <p id="title">Online Community Management System</p>
+        <p id="text">Create and manage an online community. Keep track of members, events, activities and sponsors. All in one place.</p>
+    </div>
+    <form id="signup-form" action="/community/create" method="POST">
+        <fieldset>
+        <legend>Sign Up</legend>
+        <div>
+            <lable for="name" class="signup-label">Name:</lable>
+            <input type="text" class="signup-input" id="name" size="25" name="name" placeholder="Community Name">
+        </div>
+        <div>
+            <lable for="description" class="signup-label">Description:</lable>
+            <input type="text" class="signup-input" id="description" size="25" name="description" placeholder="Describe your Community">
+        </div>
+        <div>
+            <lable for="password" class="signup-label">Password:</lable>
+            <input type="password" class="signup-input" id="password" size="25" name="password" placeholder="Password">
+        </div>
+        </fieldset>
+        <fieldset style="margin-top: 20px;">
+            <legend>Founder Details</legend>
+        <div>
+            <lable for="founder" class="signup-label">Founder Name:</lable>
+            <input type="text" class="signup-input" id="founder" size="25" name="founder" placeholder="Name of the Founder">
+        </div>
+        <div>
+            <lable for="founder-desc" class="signup-label">Founder Description:</lable>
+            <input type="text" class="signup-input" id="founder-desc" size="25" name="fDesc" placeholder="Description of the Founder">
+        </div>
+        <div>
+            <lable for="founder-skills" class="signup-label">Founder Skills:</lable>
+            <input type="text" class="signup-input" id="founder-skills" size="25" name="fSkills" placeholder="Skills of Founder">
+        </div>
+        </fieldset>
+        <div class="submit-button">
+            <button type="submit">Create Community!</button>
+        </div>
+    </form>
+</div>
+
+<div id="login" class="home-div">
+    <form id="login-id" action="/community/login" method="POST">
+        <fieldset>
+            <legend>Login</legend>
+        <div>
+            <div>
+                <lable for="login-name" class="signup-label">Community Name:</lable>
+                <input type="text" class="signup-input" id="login-name" size="25" name="name" placeholder="Community Name">
+            </div>
+            <div>
+                <lable for="login-pass" class="signup-label">Password:</lable>
+                <input type="password" class="signup-input" id="login-pass" size="25" name="password" placeholder="Password">
+            </div>
+            <div class="submit-button">
+                <button type="submit">Login</button>
+            </div>
+        </div>
+        </fieldset>
+        <div>
+            <p style="color: maroon; font-size: 16px;">{{errorMsg}}</p>
+        </div>
+    </form>
+</div>

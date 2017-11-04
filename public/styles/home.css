@@ -1,0 +1,51 @@
+.home-div {
+    float: left;
+}
+
+#signup {
+    width: 50%;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 40px;
+}
+
+#intro {
+    width: 70%;
+    margin: 3px;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 3px;
+}
+
+#text {
+    font-size: 18px;
+}
+
+#signup-form {
+    width: 70%;
+}
+
+.signup-label {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+    padding: 5px;
+    margin: 3px;
+}
+
+.signup-label {
+    
+}
+
+.submit-button {
+    margin: 10px;
+}
+
+.submit-button button {
+    margin: 0 auto;
+    font-size: 16px;
+}
