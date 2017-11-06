@@ -37,7 +37,7 @@ router.get('/member-details', (req, res) => {
         if(err) res.render('error', {
             title: 'CMS',
             status: '400',
-            message: err.body.toString(),
+            message: err.info.toString(),
             commId: req.query.commId
         });
         // TODO: render details of member
@@ -47,6 +47,24 @@ router.get('/member-details', (req, res) => {
             position: JSON.parse(info.info).position,
             description: JSON.parse(info.info).description,
             skills: JSON.parse(info.info).skills,
+            commId: req.query.commId,
+            memberId: req.query.memberId
+        });
+    });
+});
+
+router.get('/delete-member', (req, res) => {
+    memberController.deleteMember(req.query.memberId, (err, info) => {
+        if(err) res.render('error', {
+            title: 'CMS',
+            status: '400',
+            message: err.body.toString(),
+            commId: req.query.commId
+        });
+        else res.render('successful', {
+            layout: 'dashboardLayout.hbs',
+            title: 'CMS',
+            message: 'Successfully Removed Member!',
             commId: req.query.commId
         });
     });

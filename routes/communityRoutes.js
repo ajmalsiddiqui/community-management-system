@@ -48,11 +48,11 @@ router.get('/get-members', (req, res) => {
 router.post('/login', (req, res) => {
     communityController.login(req.body.name, req.body.password, (err, info) => {
         console.log(info);
-        console.log(info.info);
+        //console.log(info.info);
         if(err) res.render('home', {
-            layout: 'dashboard.hbs',
+            layout: 'dashboardLayout.hbs',
             title: 'CMS',
-            errorMsg: err.toString()
+            errorMsg: err.message.toString()
         });
         // TODO: redirect to dashboard; currently shows members
         else res.redirect('/community/get-members?commId=' + JSON.parse(info.info)._id);

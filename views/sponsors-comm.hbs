@@ -1,0 +1,46 @@
+<div class="main">
+
+    <form id="new-member" action="../sponsor/createSponsorFromCommunity" method="POST">
+    <fieldset>
+    <legend id="new-member-title">Add Sponsor</legend>
+    <div>
+        <label class="new-member-label" for="sponsor-name">Name:</label>
+        <input type="text" class="member-input" id="sponsor-name" size="25" placeholder="Sponsor Name" name="name">
+    </div>
+    <div>
+        <label class="new-member-label" for="sponsor-amount">Amount:</label>
+        <input type="text" class="member-input" id="sponsor-amount" size="25" placeholder="Amount" name="amount">
+    </div>
+    <div style="display:none; width:0px; height: 0px;">
+        <input type="hidden" value="{{commId}}" name="community">
+    </div>
+        <div id="member-submit">
+            <button type="submit">Create Sponsor</button>
+        </div>
+    </fieldset>
+    </form>
+
+          <div class="heading">
+            <span>
+                <p id="title">Sponsors</p>
+            </span>
+          </div>
+          <!--div class="heading">
+            <p id="founder">Founded by {{founder}}</p>
+          </div-->
+          <div class="member-overview">
+              <table id="member-list">
+                <tr class="member-tr">
+                  <th class="member-th">Name</th>
+                  <!--th class="member-th">Amount</th-->
+                </tr>
+                {{#each sponsors}}
+                    <tr class="member-tr">
+                        <td class="member-name"><a href="{{this.url}}&commId={{../commId}}" class="member-link">{{this.name}}</a></td>
+                        <!--td class="member-position">{{this.amount}}</td-->
+                        <td class="url">{{this.url}}</td>
+                    </tr>
+                {{/each}}
+              </table>
+          </div>
+      </div>

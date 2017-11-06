@@ -25,7 +25,7 @@ const eventSchema = mongoose.Schema({
   },
 
   budget: {
-    type: Number,
+    type: String,
     default: 0
   },
 
@@ -34,9 +34,20 @@ const eventSchema = mongoose.Schema({
     ref: 'Community',
     required: true
   }
+},
+{
+  toObject: {
+    virtuals: true
+  },
+  
+  toJSON: {
+    virtuals: true
+  }
 });
 
-
+eventSchema.virtual('url').get(function(){
+  return '../event/get-event?eventId=' + this._id
+});
 
 const Event = mongoose.model('Event', eventSchema);
 

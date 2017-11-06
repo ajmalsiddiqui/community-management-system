@@ -35,6 +35,8 @@ body {
 .nav-li a {
     text-decoration: none;
     color: white;
+    margin: 0px;
+    padding: 0px;
 }
 
 /*footer*/
@@ -58,4 +60,18 @@ body {
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
+}
+
+#logout {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+}
+
+.nav-li:hover {
+    background-color: #004a3f;
+    margin: 0px;
 }

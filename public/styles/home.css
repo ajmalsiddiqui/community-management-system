@@ -8,11 +8,20 @@
     left: 0;
     top: 0;
     padding: 40px;
+    padding-top: 0px;
 }
 
 #intro {
+    align-self: center;
+    margin: 0 auto;
     width: 70%;
-    margin: 3px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+#intro p {
+    color: #004a3f;
 }
 
 #title {
@@ -48,4 +57,21 @@
 .submit-button button {
     margin: 0 auto;
     font-size: 16px;
+}
+
+#divider {
+    border-left: 1px solid rgba(0, 121, 107, 0.8);
+    border-radius: 2px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 90%;
+}
+
+#login {
+    position: relative;
+    top: 40%;
+    padding-top: 70px;
+    padding-left: 50px;
 }

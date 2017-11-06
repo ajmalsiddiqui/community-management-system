@@ -36,6 +36,7 @@ function createNewCommunity(commName, commDesc, commFounder, commPassword, found
     
         newCommunity.save(err => {
             console.log('save');
+            if(err) console.log(err);
             if(err) return callback({
                 status: 400,
                 message: "Error in creating community",
@@ -59,6 +60,7 @@ function createNewCommunity(commName, commDesc, commFounder, commPassword, found
 
 function getAllMembersOfCommunity(commId, callback){
     Member.find({community: commId}).exec((err, members) => {
+        console.log(err);
         if(err) return callback({
             status: 400,
             message: "Error in getting members",

@@ -29,9 +29,20 @@ const activitySchema = mongoose.Schema({
     ref: 'Community',
     required: true
   }
+},
+{
+  toObject: {
+    virtuals: true
+  },
+  
+  toJSON: {
+    virtuals: true
+  }
 });
 
-
+activitySchema.virtual('url').get(function(){
+  return '../activity/get-activity?activityId=' + this._id
+});
 
 const Activity = mongoose.model('Activity', activitySchema);
 

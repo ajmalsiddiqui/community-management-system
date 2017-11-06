@@ -29,3 +29,23 @@
 .skill {
     list-style: none;
 }
+
+#delete-member {
+    background-color: #b71c1c;
+    color: white;
+    font-size: 24px;
+    width: 20%;
+    height: 50px;
+}
+
+#delete-member a {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-decoration: none;
+    color: white;
+}

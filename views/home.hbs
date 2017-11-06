@@ -1,18 +1,20 @@
-<div id="signup" class="home-div">
-    <div id="intro">
+<div id="intro">
         <p id="title">Online Community Management System</p>
         <p id="text">Create and manage an online community. Keep track of members, events, activities and sponsors. All in one place.</p>
     </div>
+
+<div id="signup" class="home-div">
+    <p style="font-size: 24px; font-weight: bold; color: #004a3f;">Create a New Community</p>
     <form id="signup-form" action="/community/create" method="POST">
         <fieldset>
-        <legend>Sign Up</legend>
+        <legend>Community Details</legend>
         <div>
-            <lable for="name" class="signup-label">Name:</lable>
-            <input type="text" class="signup-input" id="name" size="25" name="name" placeholder="Community Name">
+            <lable for="signup-name" class="signup-label">Name:</lable>
+            <input type="text" class="signup-input" id="signup-name" size="25" name="name" placeholder="Community Name">
         </div>
         <div>
-            <lable for="description" class="signup-label">Description:</lable>
-            <input type="text" class="signup-input" id="description" size="25" name="description" placeholder="Describe your Community">
+            <lable for="signup-description" class="signup-label">Description:</lable>
+            <input type="text" class="signup-input" id="signup-description" size="25" name="description" placeholder="Describe your Community">
         </div>
         <div>
             <lable for="password" class="signup-label">Password:</lable>
@@ -22,8 +24,8 @@
         <fieldset style="margin-top: 20px;">
             <legend>Founder Details</legend>
         <div>
-            <lable for="founder" class="signup-label">Founder Name:</lable>
-            <input type="text" class="signup-input" id="founder" size="25" name="founder" placeholder="Name of the Founder">
+            <lable for="signup-founder" class="signup-label">Founder Name:</lable>
+            <input type="text" class="signup-input" id="signup-founder" size="25" name="founder" placeholder="Name of the Founder">
         </div>
         <div>
             <lable for="founder-desc" class="signup-label">Founder Description:</lable>
@@ -40,10 +42,14 @@
     </form>
 </div>
 
+<div id="divider">
+
+</div>
+
 <div id="login" class="home-div">
     <form id="login-id" action="/community/login" method="POST">
         <fieldset>
-            <legend>Login</legend>
+            <legend>Community Login</legend>
         <div>
             <div>
                 <lable for="login-name" class="signup-label">Community Name:</lable>

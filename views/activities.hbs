@@ -1,0 +1,54 @@
+<div class="main">
+
+    <form id="new-activity" action="../activity/create" method="POST">
+    <fieldset>
+    <legend id="new-member-title">New Activity</legend>
+    <div>
+        <label class="new-member-label" for="activity-name">Name:</label>
+        <input type="text" class="member-input" id="activity-name" size="25" placeholder="Activity Name" name="name">
+    </div>
+    <div>
+        <label class="new-member-label" for="activity-description">Description:</label>
+        <input type="text" class="member-input" id="activity-description" size="25" placeholder="Description" name="description">
+    </div>
+    <div>
+        <label class="new-member-label" for="activity-venue">Venue:</label>
+        <input type="text" class="member-input" id="activity-venue" size="25" placeholder="Venue" name="venue">
+    </div>
+    <div>
+        <label class="new-member-label" for="activity-date">Date:</label>
+        <input id="activity-date" type="date" name="date">
+    </div>
+    <div style="display:none; width:0px; height: 0px;">
+        <input type="hidden" value="{{commId}}" name="conductedBy">
+    </div>
+        <div id="member-submit">
+            <button type="submit">Create Activity</button>
+        </div>
+    </fieldset>
+    </form>
+
+          <div class="heading">
+            <span>
+                <p id="title">Activities:</p>
+            </span>
+          </div>
+          <!--div class="heading">
+            <p id="founder">Founded by {{founder}}</p>
+          </div-->
+          <div class="member-overview">
+              <table id="member-list">
+                <tr class="member-tr">
+                  <th class="member-th">Name</th>
+                  <th class="member-th">Date</th>
+                </tr>
+                {{#each activities}}
+                    <tr class="member-tr">
+                        <td class="member-name"><a href="{{this.url}}&commId={{../commId}}" class="member-link">{{this.name}}</a></td>
+                        <td class="member-position">{{this.date}}</td>
+                        <td class="url">{{this.url}}</td>
+                    </tr>
+                {{/each}}
+              </table>
+          </div>
+      </div>

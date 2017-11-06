@@ -34,6 +34,7 @@ function createNewEvent(eventName, eventDesc, eventVenue, eventDate, eventBudget
                 });
     
                 newEvent.save(err => {
+                    console.log(err);
                     if(err) return callback({
                         status: 400,
                         message: "Error in creating event",
@@ -42,13 +43,82 @@ function createNewEvent(eventName, eventDesc, eventVenue, eventDate, eventBudget
                     callback(null, {
                         status: 200,
                         message: "Successfully created new event",
-                        info: "Successfully created new event"
+                        info: JSON.stringify(newEvent)
                     });
                 });
             }
         });
 }
 
+function getAllEvents(callback){
+    Event.find({}).exec((err, events) => {
+        if(err) return callback({
+            status: 400,
+            message: "Error in finding events",
+            info: JSON.stringify(err)
+        });
+        callback(null, {
+            status: 200,
+            message: "Successfully found events",
+            info: JSON.stringify(events)
+        });
+    });
+}
+
+function getEventDetails(eventId, callback){
+    Event.findOne({_id: eventId}).exec((err, event) => {
+        if(err) return callback({
+            status: 400,
+            message: "Error in finding event",
+            info: JSON.stringify(err)
+        });
+        else if(!event) return callback({
+            status: 400,
+            message: "Error: no event with this id",
+            info: "Error: no event with this id"
+        });
+        callback(null, {
+            status: 200,
+            message: "Successfully found event",
+            info: JSON.stringify(event)
+        });
+    });
+}
+
+function deleteEvent(eventId, callback){
+    Event.remove({_id: eventId}, err => {
+        if(err) return callback({
+            status: 400,
+            message: "Error in removing event",
+            info: err
+        });
+        callback(null, {
+            status: 200,
+            message: "event removed",
+            info: "event removed"
+        });
+    });
+}
+
+function getEventsOfCommunity(communityId, callback){
+    Event.find({conductedBy: communityId}).exec((err, events) => {
+        if(err) return callback({
+            status: 400,
+            message: "Error in finding events",
+            info: JSON.stringify(err)
+        });
+        callback(null, {
+            status: 200,
+            message: "Successfully found events",
+            info: JSON.stringify(events)
+        });
+    });
+}
+
 module.exports = {
-    'createNewEvent': createNewEvent
+    'createNewEvent': createNewEvent,
+    'getAllEvents': getAllEvents,
+    'getEventDetails': getEventDetails,
+    'deleteEvent': deleteEvent,
+    'getEventsOfCommunity': getEventsOfCommunity
 }

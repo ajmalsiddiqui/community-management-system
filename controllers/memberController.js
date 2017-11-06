@@ -68,7 +68,23 @@ function getMemberDetails(memberId, callback){
     });
 }
 
+function deleteMember(memberId, callback){
+    Member.remove({_id: memberId}, err => {
+        if(err) return callback({
+            status: 400,
+            message: "Error in removing member",
+            info: JSON.stringify(err)
+        });
+        callback(null, {
+            status: 200,
+            message: "Member removed",
+            info: "Member removed"
+        });
+    });
+}
+
 module.exports = {
     'createNewMember': createNewMember,
-    'getMemberDetails': getMemberDetails
+    'getMemberDetails': getMemberDetails,
+    'deleteMember': deleteMember
 }

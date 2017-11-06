@@ -13,16 +13,27 @@ const sponsorSchema = mongoose.Schema({
   communities: 
     [new Schema({
       community: {
-        type: [Schema.Types.ObjectId],
+        type: Schema.Types.ObjectId,
         ref: 'Community'
       },
       amount: {
-        type: Number
+        type: String
       }
     })]
+},
+{
+  toObject: {
+    virtuals: true
+  },
+
+  toJSON: {
+    virtuals: true
+  }
 });
 
-
+sponsorSchema.virtual('url').get(function(){
+  return '../sponsor/sponsorDetails?sponsorId=' + this._id
+});
 
 const Sponsor = mongoose.model('Sponsor', sponsorSchema);
 
