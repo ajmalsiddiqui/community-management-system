@@ -40,7 +40,7 @@ router.get('/all', (req, res) => {
             status: '400',
             message: err.message.toString()
         });
-        else res.render('events', {
+        else res.render('events-all', {
             //layout: 'dashboardLayout.hbs',
             events: JSON.parse(info.info),
             title: 'CMS'

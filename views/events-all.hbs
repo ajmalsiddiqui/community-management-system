@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="heading">
+        <span>
+                <p id="title">Events:</p>
+            </span>
+    </div>
+    <!--div class="heading">
+            <p id="founder">Founded by {{founder}}</p>
+          </div-->
+    <div class="member-overview">
+        <table id="member-list">
+            <tr class="member-tr">
+                <th class="member-th">Name</th>
+                <th class="member-th">Date</th>
+            </tr>
+            {{#each events}}
+            <tr class="member-tr">
+                <td class="member-name">{{this.name}}</td>
+                <td class="member-position">{{this.date}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
