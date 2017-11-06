@@ -15,14 +15,16 @@ router.post('/create', (req, res) => {
             res.render('error', {
             title: 'CMS',
             status: '400',
-            message: err.message.toString()
+            message: err.message.toString(),
+            commId: req.body.community
         });
         }
         // TODO: successfully added member page 
         else res.render('successful', {
             layout: 'dashboardLayout.hbs',
             title: 'CMS',
-            message: 'Successfully Added Member!'
+            message: 'Successfully Added Member!',
+            commId: req.body.community
         });
     });
 });
@@ -35,7 +37,8 @@ router.get('/member-details', (req, res) => {
         if(err) res.render('error', {
             title: 'CMS',
             status: '400',
-            message: err.body.toString()
+            message: err.body.toString(),
+            commId: req.query.commId
         });
         // TODO: render details of member
         else res.render('member-detailed', {
@@ -43,7 +46,8 @@ router.get('/member-details', (req, res) => {
             name: JSON.parse(info.info).name,
             position: JSON.parse(info.info).position,
             description: JSON.parse(info.info).description,
-            skills: JSON.parse(info.info).skills
+            skills: JSON.parse(info.info).skills,
+            commId: req.query.commId
         });
     });
 });

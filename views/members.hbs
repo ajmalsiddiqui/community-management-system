@@ -44,7 +44,7 @@
                 </tr>
                 {{#each members}}
                     <tr class="member-tr">
-                        <td class="member-name"><a href="{{this.url}}" class="member-link">{{this.name}}</a></td>
+                        <td class="member-name"><a href="{{this.url}}&commId={{../commId}}" class="member-link">{{this.name}}</a></td>
                         <td class="member-position">{{this.position}}</td>
                         <td class="url">{{this.url}}</td>
                     </tr>

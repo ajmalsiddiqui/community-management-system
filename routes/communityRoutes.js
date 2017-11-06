@@ -18,7 +18,7 @@ router.post('/create', (req, res) => {
         //all errors and info are returned in JSON format
         //console.log(err.info);
         if(err) res.render('error', {
-            layout: 'dashboardLayout.hbs',
+            //layout: 'dashboardLayout.hbs',
             title: 'CMS',
             status: '400',
             message: err.message.toString()
